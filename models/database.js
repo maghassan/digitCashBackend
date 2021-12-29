@@ -3,9 +3,9 @@ const mysql = require("mysql");
 const db_config = {
   connectionLimit: 100,
   host: "res162.servconfig.com",
-  user: "bolmapay_bpay",
-  database: "bolmapay_bpay",
-  password: "Samiu987$",
+  user: "digitcash",
+  database: "digitcash",
+  password: "secure@Aminu21",
   multipleStatements: true,
 };
 

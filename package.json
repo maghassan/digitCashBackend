@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Realhaqq/KanzBackend.git"
+    "url": "git+https://github.com/maghassan/digitCashBackend.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Realhaqq/KanzBackend/issues"
+    "url": "https://github.com/maghassan/digitCashBackend/issues"
   },
-  "homepage": "https://github.com/Realhaqq/KanzBackend#readme",
+  "homepage": "https://github.com/maghassan/digitCashBackend#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
