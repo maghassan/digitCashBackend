@@ -1,0 +1,92 @@
+//create user 
+  db.query(
+      //   `SELECT * FROM users WHERE LOWER(email) = LOWER(${db.escape(
+      //     formData.email
+      //   )});`,
+      //   (err, result) => {
+      //     if (result.length) {
+      //       return {
+      //         status: 409,
+      //         msg: "This email is already in use!",
+      //       };
+      //     } else {
+      //       // username is available
+      //       bcrypt.hash(formData.password, 10, (err, hash) => {
+      //         if (err) {
+      //           return {
+      //             status: 500,
+      //             msg: err,
+      //           };
+      //         } else {
+      //           // has hashed pw => add to database
+      //           db.query(
+      //             `INSERT INTO users (userid, fullname, phone, email, password) VALUES ('${uuid.v4()}', '${
+      //               formData.fullname
+      //             }', '${formData.phone}', ${db.escape(
+      //               formData.email
+      //             )}, ${db.escape(hash)})`,
+      //             (err, result) => {
+      //               if (err) {
+      //                 console.log(err);
+      //                 return {
+      //                   status: 400,
+      //                   msg: err,
+      //                 };
+      //               }
+      //               console.log("r", results);
+      //               return { msg: "Registered!", results };
+      //             }
+      //           );
+      //         }
+      //       });
+      //     }
+      //   }
+      // );
+
+
+./index.js
+
+const Sequelize = require("sequelize");
+const sequelize = new Sequelize(config.DB, config.USER, config.PASSWORD, {
+  host: config.HOST,
+  dialect: config.dialect,
+  operatorsAliases: false,
+
+  pool: {
+    max: config.pool.max,
+    min: config.pool.min,
+    acquire: config.pool.acquire,
+    idle: config.pool.idle,
+  },
+});
+
+const db = {};
+
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+
+// db.user = require("../models/user.model.js")(sequelize, Sequelize);
+
+// db.user.belongsToMany(db.role, {
+//   through: "user_roles",
+//   foreignKey: "userId",
+//   otherKey: "roleId",
+// });
+
+module.exports = db;
+
+
+ // db.query(
+      //   `UPDATE users SET last_login = now() WHERE id = '${result[0].id}'`
+      // );
+
+
+       // // password (repeat) does not match
+    // if (
+    //   !req.body.password_repeat ||
+    //   req.body.password != req.body.password_repeat
+    // ) {
+    //   return res.status(400).send({
+    //     msg: "Both passwords must match",
+    //   });
+    // }
